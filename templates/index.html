@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Google Slides → PNGs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-top: 8px
+        }
+
+        .note {
+            color: #555;
+            font-size: 0.9rem
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Google Slides → PNGs</h1>
+    <p class="note">Paste a Google Slides share link (must be "Anyone with the link can view").</p>
+    <form method="post" action="/convert">
+        <label for="url">Slides URL</label>
+        <input id="url" name="url" type="text" placeholder="https://docs.google.com/presentation/d/..." required />
+        <div>
+            <button type="submit">Download ZIP of PNGs</button>
+        </div>
+    </form>
+    <hr />
+    <p class="note">Server converts the presentation to PDF using Google export, renders pages to PNG, and returns a
+        zip.</p>
+</body>
+
+</html>
